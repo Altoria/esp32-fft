@@ -86,6 +86,9 @@ fft_config_t *fft_init(int size, fft_type_t type, fft_direction_t direction, flo
       config->input = (float *)malloc(config->size * sizeof(float));
     else if (config->type == FFT_COMPLEX)
       config->input = (float *)malloc(2 * config->size * sizeof(float));
+    else {
+      config->input = NULL;
+    }
 
     config->flags |= FFT_OWN_INPUT_MEM;
   }
@@ -102,6 +105,9 @@ fft_config_t *fft_init(int size, fft_type_t type, fft_direction_t direction, flo
       config->output = (float *)malloc(config->size * sizeof(float));
     else if (config->type == FFT_COMPLEX)
       config->output = (float *)malloc(2 * config->size * sizeof(float));
+    else {
+      config->output = NULL;
+    }
 
     config->flags |= FFT_OWN_OUTPUT_MEM;
   }
