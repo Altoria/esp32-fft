@@ -1,8 +1,8 @@
 set(srcs                
-  "components/fft/fft.c"
+  "src/fft.c"
 )
 set(include_dirs        
-  "components/fft/include/"
+  "src/include/"
 )
 idf_component_register(
   SRCS ${srcs}
